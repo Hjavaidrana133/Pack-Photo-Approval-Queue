@@ -1,4 +1,4 @@
-import Reject from "@/assets/images/packedBy.svg";
+import Reject from "@/assets/images/PackedBy.svg";
 import Amount from "@/assets/images/TotalAmount.svg";
 import PackingTime from "@/assets/images/PackingTime.svg";
 import PhotoTaken from "@/assets/images/PhotoTaken.svg";
