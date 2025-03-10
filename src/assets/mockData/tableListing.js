@@ -9,7 +9,44 @@ export const tableListing = [
     status: "Pending",
     totalItems: 4,
     totalAmount: 177.0,
+    isNew: true,
     items: [
+      {
+        id: 1,
+        sku: "SB-143801",
+        name: "Toilet Magnet",
+        image: Image3,
+        size: '5" X 5"',
+        type: "Magnet",
+        quantity: 100,
+      },
+      {
+        id: 2,
+        sku: "SB-143801",
+        name: "Bread Magnet",
+        image: Image2,
+        size: '5" X 5"',
+        type: "Magnet",
+        quantity: 100,
+      },
+      {
+        id: 3,
+        sku: "SB-143801",
+        name: "Bread Magnet",
+        image: Image2,
+        size: '5" X 5"',
+        type: "Magnet",
+        quantity: 100,
+      },
+      {
+        id: 4,
+        sku: "SB-143801",
+        name: "Toilet Magnet",
+        image: Image3,
+        size: '5" X 5"',
+        type: "Magnet",
+        quantity: 100,
+      },
       {
         id: 1,
         sku: "SB-143801",
@@ -60,6 +97,7 @@ export const tableListing = [
     status: "Pending",
     totalItems: 4,
     totalAmount: 177.0,
+    isNew: true,
     items: [
       {
         id: 1,

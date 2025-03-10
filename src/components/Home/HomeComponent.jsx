@@ -87,7 +87,7 @@ const HomeComponent = () => {
     <>
       <div className="p-6 bg-white shadow-md rounded-lg">
         {/* Header */}
-        <div className="flex justify-between items-center mb-4">
+        <div className="flex justify-between items-center mb-4 overflow-y-scroll">
           <h2 className="text-[32px] font-bold">Pack Approvals</h2>
           <div className="flex items-center gap-4 text-gray-500 text-sm">
             <span>Last updated: Feb 20, 2025 14:08 PM</span>
@@ -98,7 +98,7 @@ const HomeComponent = () => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center mt-4">
+        <div className="flex justify-between items-center mt-4 overflow-y-scroll">
           <div className="flex gap-3">
             {tabs.map((tab) => (
               <button
