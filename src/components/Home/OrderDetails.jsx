@@ -1,10 +1,9 @@
 import Reject from "@/assets/images/packedBy.svg";
-import Amount from "@/assets/images/totalAmount.svg";
-import PackingTime from "@/assets/images/packingTime.svg";
-import PhotoTaken from "@/assets/images/photoTaken.svg";
+import Amount from "@/assets/images/TotalAmount.svg";
+import PackingTime from "@/assets/images/PackingTime.svg";
+import PhotoTaken from "@/assets/images/PhotoTaken.svg";
 import Address from "@/assets/images/Address.svg";
 import Shipping from "@/assets/images/Shipping.svg";
-
 import Image from "next/image";
 
 export default function OrderDetails({ order }) {
