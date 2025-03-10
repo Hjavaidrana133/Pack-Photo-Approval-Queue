@@ -16,9 +16,12 @@ const HomeComponent = () => {
   const statusCounts = useMemo(() => {
     const counts = {
       all: tableListing.length,
-      pending: tableListing.filter(order => order.status === "Pending").length,
-      approved: tableListing.filter(order => order.status === "Approved").length,
-      rejected: tableListing.filter(order => order.status === "Rejected").length
+      pending: tableListing.filter((order) => order.status === "Pending")
+        .length,
+      approved: tableListing.filter((order) => order.status === "Approved")
+        .length,
+      rejected: tableListing.filter((order) => order.status === "Rejected")
+        .length,
     };
     return counts;
   }, []);
@@ -57,28 +60,30 @@ const HomeComponent = () => {
 
   const filteredData = useMemo(() => {
     let filtered = [...tableListing];
-    
+
     if (activeTab !== "all") {
-      const statusFilter = activeTab.charAt(0).toUpperCase() + activeTab.slice(1);
-      filtered = filtered.filter(order => order.status === statusFilter);
+      const statusFilter =
+        activeTab.charAt(0).toUpperCase() + activeTab.slice(1);
+      filtered = filtered.filter((order) => order.status === statusFilter);
     }
-    
+
     if (searchQuery.trim() !== "") {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(order => 
-        order.customerName.toLowerCase().includes(query) ||
-        order.id.toLowerCase().includes(query)
+      filtered = filtered.filter(
+        (order) =>
+          order.customerName.toLowerCase().includes(query) ||
+          order.id.toLowerCase().includes(query)
       );
     }
-    
+
     return filtered.sort((a, b) => {
       const dateA = new Date(a.orderDate);
       const dateB = new Date(b.orderDate);
-      
+
       if (sortOption === "newest") {
-        return dateB - dateA; 
+        return dateB - dateA;
       } else {
-        return dateA - dateB; 
+        return dateA - dateB;
       }
     });
   }, [activeTab, searchQuery, sortOption]);
@@ -107,11 +112,17 @@ const HomeComponent = () => {
                 className={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-medium ${
                   activeTab === tab.value
                     ? "bg-red-500 text-white"
-                    : "bg-gray-200 text-gray-700"
+                    : "bg-white border text-gray-700"
                 }`}
               >
                 {tab.label}
-                <span className="bg-white text-gray-700 px-2 py-1 rounded-full text-xs font-bold">
+                <span
+                  className={` text-gray-700 px-2 py-1 rounded-full text-xs font-bold ${
+                    activeTab === tab.value
+                      ? "bg-white"
+                      : "bg-[#A0A0A0] text-white font-[700]"
+                  }`}
+                >
                   {tab.count}
                 </span>
               </button>
