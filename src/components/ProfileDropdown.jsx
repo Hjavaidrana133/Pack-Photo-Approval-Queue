@@ -19,7 +19,7 @@ const ProfileDropdown = ({ onSelect, userName, userImage }) => {
             alt="User"
             className="w-8 h-8 rounded-full"
           ></Image>
-          <span className="text-sm font-medium">{userName}</span>
+          <span className="text-sm font-bold">{userName}</span>
         </>
       }
     />

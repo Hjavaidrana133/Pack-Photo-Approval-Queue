@@ -5,6 +5,10 @@ import OrderDetails from "./OrderDetails";
 import OrderActions from "./OrderActions";
 import Image from "next/image";
 import Image1 from "@/assets/images/SB-143801-packed 1 1.svg";
+import Pending from "@/assets/images/Pending.svg";
+import Approved from "@/assets/images/Approved.svg";
+import Reject from "@/assets/images/Reject.svg";
+
 
 const HeaderValue = [
   "Order Number",
@@ -37,7 +41,18 @@ export default function OrderHeader({ orders }) {
       <div
         className={`inline-flex items-center px-3 py-1 rounded-full font-[700] text-sm ${styles}`}
       >
-        {status === "Pending" ? "⏱️" : status === "Approved" ? "✓" : "⊘"}{" "}
+        <Image
+          src={
+            status === "Pending"
+              ? Pending
+              : status === "Approved"
+              ? Approved
+              : Reject
+          }
+          alt="status Image"
+          className="h-4 w-4 mr-1"
+        />
+        {/* {}{" "} */}
         {status}
       </div>
     );
@@ -71,7 +86,11 @@ export default function OrderHeader({ orders }) {
           >
             <div className={`flex items-center`}>
               <div className="bg-gray-200 rounded-md flex items-center justify-center text-xs text-gray-600">
-                <Image src={Image1} alt="user" className="object-cover h-10 w-10 rounded-md"></Image>
+                <Image
+                  src={Image1}
+                  alt="user"
+                  className="object-cover h-10 w-10 rounded-md"
+                ></Image>
               </div>
               <div className="ml-3">
                 <div className="text-sm font-medium text-gray-900">
@@ -101,7 +120,7 @@ export default function OrderHeader({ orders }) {
             <div className="flex justify-end">
               <button
                 onClick={() => handleToggleOrder(order.id)}
-                className="flex items-center gap-2 px-4 py-2 border border-[#ADADAD] rounded-full font-medium"
+                className="flex items-center gap-2 px-4 py-2 border border-[#ADADAD] rounded-full font-medium text-sm"
               >
                 View{" "}
                 {expandedOrderId === order.id ? (
@@ -115,7 +134,7 @@ export default function OrderHeader({ orders }) {
 
           {expandedOrderId === order.id && (
             <div className="col-span-6">
-              <div className="flex flex-col md:flex-row p-4">
+              <div className="flex flex-col md:flex-row px-4 py-2">
                 <div className="w-full md:w-3/5 pr-2">
                   <Image
                     src={Image1}
@@ -129,7 +148,7 @@ export default function OrderHeader({ orders }) {
                   <OrderItems items={order.items} />
                 </div>
               </div>
-              <div className="p-4">
+              <div className="px-4 py-2">
                 <OrderDetails order={order} />
               </div>
               <div
